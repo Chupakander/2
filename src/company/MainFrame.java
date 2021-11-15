@@ -44,7 +44,7 @@ import javax.swing.JTextField;
 
         // Формула №1 для рассчѐта
         public Double calculate1(Double x, Double y) {
-            return x*x*x*x + y*y;
+            return x*x*x*x + y*y/x;
         }
         // Формула №2 для рассчѐта
         public Double calculate2(Double x, Double y) {
