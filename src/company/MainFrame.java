@@ -116,13 +116,13 @@ import javax.swing.JTextField;
 // Создать область для вывода результата
             JLabel labelForResult = new JLabel("Результат:");
 //labelResult = new JLabel("0");
-            textFieldResult = new JTextField("0", 10);
+            textFieldResult = new JTextField("0", 20);
             textFieldResult.setMaximumSize(
                     textFieldResult.getPreferredSize());
             Box hboxResult = Box.createHorizontalBox();
             hboxResult.add(Box.createHorizontalGlue());
             hboxResult.add(labelForResult);
-            hboxResult.add(Box.createHorizontalStrut(10));
+            hboxResult.add(Box.createHorizontalStrut(20));
             hboxResult.add(textFieldResult);
             hboxResult.add(Box.createHorizontalGlue());
             hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
