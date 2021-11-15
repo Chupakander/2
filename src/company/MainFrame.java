@@ -26,12 +26,13 @@ import javax.swing.JTextField;
 // Главный класс приложения, он же класс фрейма
     public class MainFrame extends JFrame {
         // Размеры окна приложения в виде констант
-        private static final int WIDTH = 400;
-        private static final int HEIGHT = 320;
+        private static final int WIDTH = 800;
+        private static final int HEIGHT = 640;
         // Текстовые поля для считывания значений переменных,
 // как компоненты, совместно используемые в различных методах
         private JTextField textFieldX;
         private JTextField textFieldY;
+        private JTextField textFieldZ;
         // Текстовое поле для отображения результата,
 // как компонент, совместно используемый в различных методах
         private JTextField textFieldResult;
@@ -43,12 +44,12 @@ import javax.swing.JTextField;
 
 
         // Формула №1 для рассчѐта
-        public Double calculate1(Double x, Double y) {
-            return x*x*x*x + y*y;
+        public Double calculate1(Double x, Double y,Double z) {
+            return (Math.sin(Math.PI*y*y)+Math.log(y*y))/(Math.sin(Math.PI*z*z)+Math.sin(x)+x*x+Math.log(z*z)+Math.pow(Math.E,Math.sin(z*x)));
         }
         // Формула №2 для рассчѐта
-        public Double calculate2(Double x, Double y) {
-            return x*x*x + 1/y;
+        public Double calculate2(Double x, Double y,Double z) {
+            return (y*x*x)/(Math.log(Math.pow(z,y))+Math.pow(Math.cos(Math.pow(x,1/3)),2));
         }
         // Вспомогательный метод для добавления кнопок на панель
         private void addRadioButton(String buttonName, final int formulaId) {
@@ -83,20 +84,33 @@ import javax.swing.JTextField;
             JLabel labelForX = new JLabel("X:");
             textFieldX = new JTextField("0", 10);
             textFieldX.setMaximumSize(textFieldX.getPreferredSize());
+
             JLabel labelForY = new JLabel("Y:");
             textFieldY = new JTextField("0", 10);
             textFieldY.setMaximumSize(textFieldY.getPreferredSize());
+
+            JLabel labelForZ = new JLabel("Z:");
+            textFieldZ = new JTextField("0", 10);
+            textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
+
             Box hboxVariables = Box.createHorizontalBox();
             hboxVariables.setBorder(
                     BorderFactory.createLineBorder(Color.RED));
             hboxVariables.add(Box.createHorizontalGlue());
+
             hboxVariables.add(labelForX);
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldX);
-            hboxVariables.add(Box.createHorizontalStrut(100));
+
+
             hboxVariables.add(labelForY);
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldY);
+            hboxVariables.add(labelForZ);
+            hboxVariables.add(Box.createHorizontalStrut(10));
+            hboxVariables.add(textFieldZ);
+
+
             hboxVariables.add(Box.createHorizontalGlue());
 // Создать область для вывода результата
             JLabel labelForResult = new JLabel("Результат:");
@@ -119,11 +133,12 @@ import javax.swing.JTextField;
 
                         Double x = Double.parseDouble(textFieldX.getText());
                         Double y = Double.parseDouble(textFieldY.getText());
+                        Double z = Double.parseDouble(textFieldY.getText());
                         Double result;
                         if (formulaId==1)
-                            result = calculate1(x, y);
+                            result = calculate1(x, y,z);
                         else
-                            result = calculate2(x, y);
+                            result = calculate2(x, y,z);
                         textFieldResult.setText(result.toString());
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(MainFrame.this,
@@ -137,6 +152,7 @@ import javax.swing.JTextField;
                 public void actionPerformed(ActionEvent ev) {
                     textFieldX.setText("0");
                     textFieldY.setText("0");
+                    textFieldZ.setText("0");
                     textFieldResult.setText("0");
                 }
             });
