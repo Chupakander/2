@@ -48,11 +48,11 @@ import javax.swing.JTextField;
         // Формула №1 для рассчѐта
 
         public Double calculate1(Double x, Double y,Double z) {
-            return (Math.sin(Math.PI*y*y)+Math.log(y*y))/(Math.sin(Math.PI*z*z)+Math.sin(x)+x*x+Math.log(z*z)+Math.pow(Math.E,Math.sin(z*x)));
+            return (Math.sin(Math.PI*y*y)+Math.log(y*y))/(Math.sin(Math.PI*z*z)+Math.sin(x)+x*x+Math.log(z*z)+Math.pow(Math.E,Math.cos(z*x)));
         }
         // Формула №2 для рассчѐта
         public Double calculate2(Double x, Double y,Double z) {
-            return ((y*x*x)/(Math.log(Math.pow(z,y))+Math.pow(Math.cos(Math.pow(x,1/3)),2)));
+            return ((x*x*y)/((Math.log(Math.pow(z,y)))+Math.pow(Math.cos(Math.pow(x,1/3)),2)));
         }
         // Вспомогательный метод для добавления кнопок на панель
         private void addRadioButton(String buttonName, final int formulaId) {
@@ -105,11 +105,10 @@ import javax.swing.JTextField;
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldX);
 
-            hboxVariables.add(Box.createHorizontalStrut(100));
             hboxVariables.add(labelForY);
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldY);
-            hboxVariables.add(Box.createHorizontalStrut(100));
+
             hboxVariables.add(labelForZ);
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldZ);
@@ -149,16 +148,17 @@ import javax.swing.JTextField;
             buttonCalc.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent ev) {
                     try {
-
                         Double x = Double.parseDouble(textFieldX.getText());
                         Double y = Double.parseDouble(textFieldY.getText());
-                        Double z = Double.parseDouble(textFieldY.getText());
-                        Double result;
-                        if (formulaId==1)
-                            result = calculate1(x, y,z);
-                        else
-                            result = calculate2(x, y,z);
+                        Double z = Double.parseDouble(textFieldZ.getText());
+                        if (formulaId == 1) {
+                            result = calculate1(x, y, z);
+                        }
+                        else {
+                            result = calculate2(x, y, z);
+                        }
                         textFieldResult.setText(result.toString());
+
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(MainFrame.this,
                                 "Ошибка в формате записи числа с плавающей точкой", "Ошибочный формат числа",
