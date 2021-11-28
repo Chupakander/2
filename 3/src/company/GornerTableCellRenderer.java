@@ -11,30 +11,58 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 public class GornerTableCellRenderer implements TableCellRenderer {
-        private JPanel panel = new JPanel();
-        private JLabel label = new JLabel();
-        private DecimalFormat formater = (DecimalFormat)NumberFormat.getInstance();
+    private JPanel panel = new JPanel();
+    private JLabel label = new JLabel();
+    // Ищем ячейки, строковое представление которых совпадает с needle
+// (иголкой). Применяется аналогия поиска иголки в стоге сена, в роли
+// стога сена - таблица
+    private String needle = null;
+    private DecimalFormat formatter =
 
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelect, boolean hasFocus, int row, int col) {
-            String znakX = this.formater.format(value);
-            this.label.setText(znakX);
-            this.panel.setBackground(Color.WHITE);
-            this.label.setForeground(Color.BLACK);
-            if (col == 1 && Double.parseDouble(znakX) < 0.0D) {
-                this.panel.setBackground(Color.GREEN);
-                this.label.setForeground(Color.RED);
-            }
+            (DecimalFormat)NumberFormat.getInstance();
 
-            return this.panel;
-        }
+    public GornerTableCellRenderer() {
+// Показывать только 5 знаков после запятой
+        formatter.setMaximumFractionDigits(5);
+// Не использовать группировку (т.е. не отделять тысячи
+// ни запятыми, ни пробелами), т.е. показывать число как "1000",
+// а не "1 000" или "1,000"
+        formatter.setGroupingUsed(false);
+// Установить в качестве разделителя дробной части точку, а не
+// запятую. По умолчанию, в региональных настройках
+// Россия/Беларусь дробная часть отделяется запятой
+        DecimalFormatSymbols dottedDouble =
 
-        public GornerTableCellRenderer() {
-            this.panel.add(this.label);
-            this.panel.setLayout(new FlowLayout(0));
-            this.formater.setMaximumFractionDigits(5);
-            this.formater.setGroupingUsed(false);
-            DecimalFormatSymbols dotDouble = this.formater.getDecimalFormatSymbols();
-            dotDouble.setDecimalSeparator('.');
-            this.formater.setDecimalFormatSymbols(dotDouble);
-        }
+                formatter.getDecimalFormatSymbols();
+
+        dottedDouble.setDecimalSeparator('.');
+
+
+        formatter.setDecimalFormatSymbols(dottedDouble);
+// Разместить надпись внутри панели
+        panel.add(label);
+// Установить выравнивание надписи по левому краю панели
+        panel.setLayout(new FlowLayout(FlowLayout.LEFT));
     }
+    public Component getTableCellRendererComponent(JTable table,
+                                                   Object value, boolean isSelected, boolean hasFocus, int row, int col) {
+// Преобразовать double в строку с помощью форматировщика
+        String formattedDouble = formatter.format(value);
+// Установить текст надписи равным строковому представлению числа
+        label.setText(formattedDouble);
+        if (col==1 && needle!=null && needle.equals(formattedDouble)) {
+// Номер столбца = 1 (т.е. второй столбец) + иголка не null
+// (значит что-то ищем) +
+// значение иголки совпадает со значением ячейки таблицы -
+// окрасить задний фон панели в красный цвет
+            panel.setBackground(Color.RED);
+        } else {
+// Иначе - в обычный белый
+            panel.setBackground(Color.WHITE);
+        }
+        return panel;
+    }
+    public void setNeedle(String needle) {
+        this.needle = needle;
+    }
+}

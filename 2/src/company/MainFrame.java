@@ -54,6 +54,7 @@ import javax.swing.JTextField;
         public Double calculate2(Double x, Double y,Double z) {
             return ((x*x*y)/((Math.log(Math.pow(z,y)))+Math.pow(Math.cos(Math.pow(x,1/3)),2)));
         }
+        ///////
         // Вспомогательный метод для добавления кнопок на панель
         private void addRadioButton(String buttonName, final int formulaId) {
             JRadioButton button = new JRadioButton(buttonName);
@@ -89,11 +90,11 @@ import javax.swing.JTextField;
             textFieldX.setMaximumSize(textFieldX.getPreferredSize());
 
             JLabel labelForY = new JLabel("Y:");
-            textFieldY = new JTextField("0", 10);
+            textFieldY = new JTextField("0", 15);
             textFieldY.setMaximumSize(textFieldY.getPreferredSize());
 
             JLabel labelForZ = new JLabel("Z:");
-            textFieldZ = new JTextField("0", 10);
+            textFieldZ = new JTextField("0", 15);
             textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
 
             Box hboxVariables = Box.createHorizontalBox();
