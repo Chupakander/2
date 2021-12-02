@@ -45,7 +45,7 @@ public class MainFrame extends JFrame {
 
                 (kit.getScreenSize().height - HEIGHT)/2);
 // Развѐртывание окна на весь экран
-        setExtendedState(MAXIMIZED_BOTH);
+
 // Создать и установить полосу меню
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);

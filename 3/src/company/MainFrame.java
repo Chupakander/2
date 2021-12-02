@@ -272,7 +272,7 @@ public class MainFrame extends JFrame
             {
                 // Установить в полях ввода значения по умолчанию
                 textFieldFrom.setText("0.0");
-                textFieldTo.setText("1.0");
+                textFieldTo.setText("10.0");
                 textFieldStep.setText("0.1");
                 // Удалить все вложенные элементы контейнера hBoxResult
                 hBoxResult.removeAll();

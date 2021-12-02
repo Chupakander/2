@@ -1,47 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bb1e80-15d1-429c-ab97-2ffdcf39b392" name="Changes" comment="final">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/проекты/company/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/company/MainFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/проекты.iml" beforeDir="false" />
+    <list default="true" id="28e6d0f5-d944-44b9-8057-bb3cc660dd48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3/out/production/3/company/GornerTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/3/out/production/3/company/GornerTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3/out/production/3/company/MainFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/3/out/production/3/company/MainFrame$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3/src/company/GornerTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/3/src/company/GornerTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3/src/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/3/src/company/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/out/production/4/company/GraphicsDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/4/out/production/4/company/GraphicsDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/out/production/4/company/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/4/out/production/4/company/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/src/company/GraphicsDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/4/src/company/GraphicsDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/src/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/4/src/company/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectId" id="20xVNHCAPBis9KlnCZMxTd7PKnl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="21e9T4dYeUyBPJMHXBVgjPmkzB0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,115 +28,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/2" />
-  </component>
-  <component name="RunManager">
-    <configuration name="MainFrame" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="company.MainFrame" />
-      <module name="проекты" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05bb1e80-15d1-429c-ab97-2ffdcf39b392" name="Changes" comment="" />
-      <created>1636986185632</created>
+      <changelist id="28e6d0f5-d944-44b9-8057-bb3cc660dd48" name="Changes" comment="" />
+      <created>1638290691758</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1636986185632</updated>
+      <updated>1638290691758</updated>
     </task>
-    <task id="LOCAL-00001" summary="creating project">
-      <created>1637002471314</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1637002471314</updated>
-    </task>
-    <task id="LOCAL-00002" summary="creating project">
-      <created>1637002509618</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1637002509618</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add z">
-      <created>1637006741561</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1637006741561</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add z">
-      <created>1637006944687</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1637006944687</updated>
-    </task>
-    <task id="LOCAL-00005" summary="1">
-      <created>1637007389388</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1637007389388</updated>
-    </task>
-    <task id="LOCAL-00006" summary="revisions">
-      <created>1637610725736</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1637610725736</updated>
-    </task>
-    <task id="LOCAL-00007" summary="revisions">
-      <created>1637610959924</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1637610959924</updated>
-    </task>
-    <task id="LOCAL-00008" summary="final">
-      <created>1637612853630</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1637612853630</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="creating project" />
-    <MESSAGE value="add z" />
-    <MESSAGE value="1" />
-    <MESSAGE value="revisions" />
-    <MESSAGE value="final" />
-    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>

@@ -64,7 +64,7 @@ public class GornerTableModel extends AbstractTableModel
             {
                 result = coefficients[i]+result*x;
             }
-            req=result%1;
+            req=Math.abs(result%1);
             if (req> 0 && req<1)
             return EndResult == 1 ;
             else
