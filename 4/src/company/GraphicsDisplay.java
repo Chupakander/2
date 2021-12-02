@@ -106,6 +106,7 @@ public class GraphicsDisplay extends JPanel
             {
                 minY = graphicsData[i][1];
             }
+
             if (graphicsData[i][1]>maxY)
             {
                 maxY = graphicsData[i][1];
