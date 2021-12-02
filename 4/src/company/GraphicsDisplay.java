@@ -198,7 +198,35 @@ public class GraphicsDisplay extends JPanel
         canvas.draw(graphics);		// Отобразить график
     }
 
-    private void graphics(BasicStroke basicStroke, boolean b) {
+
+    private double specialPoint(Double[] point) {
+        for (int i=0; i<graphicsData.length; i++)
+        {
+            double number = point[1].doubleValue();
+            String af = Double.toString(number);
+
+            int cel = (int) number;
+            boolean c1 = false;
+            int a = 0;
+
+
+                a = cel % 2;
+
+                if (a == 0) {
+                    c1 = true;
+
+                } else {
+                    c1 = false;
+                }
+
+
+            if (c1 == true) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        return 0;
     }
 
     // Отображение маркеров точек, по которым рисовался график
@@ -206,7 +234,7 @@ public class GraphicsDisplay extends JPanel
     {
         for (Double[] point: graphicsData) 		//Организовать цикл по всем точкам графика
         {
-            canvas.setStroke(markerStroke);			//Установить специальное перо для черчения контуров маркеров
+            		//Установить специальное перо для черчения контуров маркеров
 
 
             //canvas.setPaint(Color.GREEN);			//Выбрать зелёный цвет для закрашивания маркеров внутри
@@ -221,16 +249,22 @@ public class GraphicsDisplay extends JPanel
 			canvas.fill(marker);									// Залить внутреннюю область маркера
 			*/
 
+            canvas.setStroke(markerStroke);
+
+
+          double c1=specialPoint( point);
+          if(c1==1)
+            {canvas.setColor(Color.BLACK);	//Выбрать blue цвета для контуров маркеров
+                canvas.setPaint(Color.BLACK);
+
+            }
+            else{
+                canvas.setColor(Color.GREEN);			//инеаче - Black
+                canvas.setPaint(Color.green);
+            }
             GeneralPath path = new GeneralPath();
             Point2D.Double center = xyToPoint(point[0], point[1]);
 
-            canvas.setColor(Color.BLUE);	//Выбрать blue цвета для контуров маркеров
-            canvas.setPaint(Color.BLUE);
-            if ( unorderedValues(point[1]) )
-            {
-                canvas.setColor(Color.BLACK);			//инеаче - Black
-                canvas.setPaint(Color.BLACK);
-            }
             path.append(new Line2D.Double(center.getX() + 5.5, center.getY(), center.getX() + 1.5, center.getY() + 1.5), true);
             path.append(new Line2D.Double(center.getX() + 1.5, center.getY() +1.5, center.getX() , center.getY() + 5.5), true);
             path.append(new Line2D.Double(center.getX(), center.getY() + 5.5, center.getX() - 1.5, center.getY() + 1.5), true);
@@ -244,41 +278,7 @@ public class GraphicsDisplay extends JPanel
         }
     }
 
-    boolean unorderedValues( double value )
-    {
 
-        int valueInt = (int) value;
-        {
-            int rest = valueInt%10;
-            valueInt = valueInt/10;
-            int restPrev = 9;
-            while(valueInt!=0){
-                restPrev = rest;
-                rest = valueInt%10;
-                if( restPrev < rest )
-                    return false;
-                valueInt = valueInt/10;
-            }
-        }
-
-        valueInt = (int) value;
-        double rest = value - (double) valueInt;
-        int number = (int)(100*rest);
-        int numberPrev = (int)(10*rest);
-        for( int i = 0; i < Double.SIZE; i++ ){
-            if( numberPrev > number )
-                return false;
-            rest = 10*rest - (double)((int)(10*rest));
-            numberPrev = number;
-            number = (int)(10*rest);
-        }
-        return true;
-    }
-
-    private boolean unorderedValues(Double double1) {
-        // TODO Auto-generated method stub
-        return false;
-    }
     // Метод, обеспечивающий отображение осей координат
     protected void paintAxis(Graphics2D canvas)
     {
