@@ -76,25 +76,23 @@ import javax.swing.JTextField;
 // Отцентрировать окно приложения на экране
             setLocation((kit.getScreenSize().width - WIDTH)/2,
                     (kit.getScreenSize().height - HEIGHT)/2);
-            hboxFormulaType.add(Box.createHorizontalGlue());
+            hboxFormulaType.add(Box.createHorizontalGlue());//клей
             addRadioButton("Формула 1", 1);
             addRadioButton("Формула 2", 2);
-            radioButtons.setSelected(
-                    radioButtons.getElements().nextElement().getModel(), true);
+            radioButtons.setSelected(radioButtons.getElements().nextElement().getModel(), true);
             hboxFormulaType.add(Box.createHorizontalGlue());
-            hboxFormulaType.setBorder(
-                    BorderFactory.createLineBorder(Color.YELLOW));
+            hboxFormulaType.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
 // Создать область с полями ввода для X и Y
             JLabel labelForX = new JLabel("X:");
             textFieldX = new JTextField("0", 10);
             textFieldX.setMaximumSize(textFieldX.getPreferredSize());
 
             JLabel labelForY = new JLabel("Y:");
-            textFieldY = new JTextField("0", 15);
+            textFieldY = new JTextField("0", 10);
             textFieldY.setMaximumSize(textFieldY.getPreferredSize());
 
             JLabel labelForZ = new JLabel("Z:");
-            textFieldZ = new JTextField("0", 15);
+            textFieldZ = new JTextField("0", 10);
             textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
 
             Box hboxVariables = Box.createHorizontalBox();
@@ -111,7 +109,7 @@ import javax.swing.JTextField;
             hboxVariables.add(textFieldY);
 
             hboxVariables.add(labelForZ);
-            hboxVariables.add(Box.createHorizontalStrut(10));
+            hboxVariables.add(Box.createHorizontalStrut(10));//распорка
             hboxVariables.add(textFieldZ);
 
 
@@ -119,13 +117,13 @@ import javax.swing.JTextField;
 // Создать область для вывода результата
             JLabel labelForResult = new JLabel("Результат:");
 //labelResult = new JLabel("0");
-            textFieldResult = new JTextField("0", 20);
+            textFieldResult = new JTextField("0", 15);
             textFieldResult.setMaximumSize(
                     textFieldResult.getPreferredSize());
             Box hboxResult = Box.createHorizontalBox();
             hboxResult.add(Box.createHorizontalGlue());
             hboxResult.add(labelForResult);
-            hboxResult.add(Box.createHorizontalStrut(20));
+            hboxResult.add(Box.createHorizontalStrut(10));
             hboxResult.add(textFieldResult);
             hboxResult.add(Box.createHorizontalGlue());
             hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
@@ -205,11 +203,11 @@ import javax.swing.JTextField;
             Box hboxButtons = Box.createHorizontalBox();
             hboxButtons.add(Box.createHorizontalGlue());
             hboxButtons.add(buttonCalc);
-            hboxButtons.add(Box.createHorizontalStrut(30));
+            hboxButtons.add(Box.createHorizontalStrut(10));
             hboxButtons.add(calculate);
-            hboxButtons.add(Box.createHorizontalStrut(30));
+            hboxButtons.add(Box.createHorizontalStrut(10));
             hboxButtons.add(buttonReset);
-            hboxButtons.add(Box.createHorizontalStrut(30));
+            hboxButtons.add(Box.createHorizontalStrut(10));
             hboxButtons.add(buttonMC);
             hboxButtons.add(Box.createHorizontalGlue());
             hboxButtons.setBorder(

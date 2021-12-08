@@ -45,7 +45,7 @@ public class GraphicsDisplay extends JPanel
 
         // Перо для рисования графика - прорисрвываются границы фигур
         //толщина линии 2.0f - две точки, 10.0f - угол смыкания 10 градусов
-        graphicsStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 10.0f, new float[] {1,1, 2,1, 1,1, 4,1, 2,1, 1,1}, 0.0f);
+        graphicsStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 10.0f, new float[] {5,5, 10,5, 5,5, 20,5, 10,5, 5,5}, 0.0f);
         // Перо для рисования осей координат
         axisStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, null, 0.0f);
         // Перо для рисования контуров маркеров
@@ -201,31 +201,25 @@ public class GraphicsDisplay extends JPanel
 
 
     private double specialPoint(Double[] point) {
-        for (int i=0; i<graphicsData.length; i++)
-        {
+        for (int i=0; i<graphicsData.length; i++) {
             double number = point[1].doubleValue();
-            String af = Double.toString(number);
+
 
             int cel = (int) number;
             boolean c1 = false;
             int a = 0;
 
 
-                a = cel % 2;
+            a = cel % 2;
 
-                if (a == 0) {
-                    c1 = true;
-
-                } else {
-                    c1 = false;
-                }
-
-
-            if (c1 == true) {
-                return 0;
-            } else {
+            if (a == 0) {
                 return 1;
+
+            } else {
+                return 0;
             }
+
+
         }
         return 0;
     }
@@ -261,7 +255,7 @@ public class GraphicsDisplay extends JPanel
             }
             else{
                 canvas.setColor(Color.GREEN);			//инеаче - Black
-                canvas.setPaint(Color.green);
+                canvas.setPaint(Color.GREEN);
             }
             GeneralPath path = new GeneralPath();
             Point2D.Double center = xyToPoint(point[0], point[1]);
